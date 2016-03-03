@@ -1,17 +1,27 @@
 import express from 'express';
 import path from 'path';
+import webpack from 'webpack';
+import webpackConfig from '../webpack/webpack.config';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 
 const app = express();
 
-app.use(express.static(__dirname + '../dist'));
+let compiler = webpack(webpackConfig);
+app.use(webpackDevMiddleware(compiler, {
+    noInfo: true, publicPath: webpackConfig.output.publicPath
+}));
+app.use(webpackHotMiddleware(compiler));
+
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.get('/', function response(req, res) {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 let server = app.listen(process.env.PORT || 3000, () => {
-    var host = server.address().address;
-    var port = server.address().port;
+    var host = server.address().address,
+    	port = server.address().port;
 
     console.log(`Server listening at http://${host}:${port}`);
 });

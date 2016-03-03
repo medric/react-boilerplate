@@ -12,10 +12,13 @@ module.exports = {
         path.resolve(__dirname, '../app/index.js')
     ],
     output: {
-        path: path.join(__dirname, '../dist/'),
+        path: path.resolve(__dirname, '../dist/'),
+        publicPath: '',
         filename: 'bundle.js',
-        sourceMapFilename: "[file].map"
+        sourceMapFilename: "[file].map",
     },
+    devtool: 'sourcemap',
+    debug: true,
     plugins: [
         new AppCachePlugin(),
         new webpack.HotModuleReplacementPlugin(), // Make hot loading work
@@ -38,7 +41,9 @@ module.exports = {
             {
                 test: /\.js$/, // Transform all .js files required somewhere within an entry point
                 loader: 'babel',
-                exclude: path.join(__dirname, '/node_modules/') // except for the node_modules folder.
+                exclude: [path.join(__dirname, '../node_modules/'),
+                            path.join(__dirname, '../dist/'),
+                                path.join(__dirname, '../server/') ] // except for the node_modules, dist and server folders.
             }
         ]
     },
