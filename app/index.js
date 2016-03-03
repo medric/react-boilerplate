@@ -12,9 +12,7 @@ import App from './components/App.react';
 
 ReactDOM.render(
     <Router history={hashHistory}>
-        <Route component={App}>
-            <Route path="/" component={HomePage} />
-        </Route>
+        <Route path="/" component={App}></Route>
     </Router>,
     document.getElementById('app')
 );
