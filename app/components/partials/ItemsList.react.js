@@ -2,17 +2,21 @@ import React, { PropTypes, Component } from 'react';
 import Item from './Item.react';
 
 class ItemsList extends Component {
+	get data() {
+
+	}
+
 	constructor(props) {
 		super(props);
-	},
+	}
 
 	componentWillMount() {
 
-	},
+	}
 
 	componentWillUnmount() {
 
-	},
+	}
 
     render() {
         return (

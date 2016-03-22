@@ -3,15 +3,15 @@ import React, { PropTypes, Component } from 'react'
 class Item extends Component {
 	constructor(props) {
 		super(props);
-	},
+	}
 
 	componentWillMount() {
 
-	},
+	}
 
 	componentWillUnmount() {
 
-	},
+	}
 
     render() {
         return (

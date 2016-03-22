@@ -17,6 +17,11 @@ module.exports = {
         filename: 'bundle.js',
         sourceMapFilename: "[file].map",
     },
+    resolve: {
+        root: [
+            path.resolve('./app')
+        ]
+    },
     devtool: 'sourcemap',
     debug: true,
     plugins: [
@@ -36,7 +41,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader!postcss-loader"
+                loader: "style-loader!styles-loader!postcss-loader"
             },
             {
                 test: /\.js$/, // Transform all .js files required somewhere within an entry point

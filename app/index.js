@@ -1,18 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { Router, Route } from 'react-router';
-import { hashHistory } from 'react-router'
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import createBrowserHistory from 'history/lib/createBrowserHistory'
+import { useRouterHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
+import makeRoutes from './routes'
+import configureStore from './redux/configureStore'
 
-// Import the partials
-import HomePage from './components/partials/HomePage.react';
-import App from './components/App.react';
+// Configure history for react-router
+const browserHistory = useRouterHistory(createBrowserHistory) ({
+    basename: __BASENAME__
+});
 
+// Create redux store and sync with react-router
+const initialState = window.__INITIAL_STATE__;
+const store = configureStore(initialState, browserHistory);
+const history = syncHistoryWithStore(browserHistory, store, {
+   selectLocationState: (state) => state.router
+});
+
+// Create routes
+const routes = makeRoutes(store);
+
+// Render application to the DOM
 ReactDOM.render(
-    <Router history={hashHistory}>
-        <Route path="/" component={App}></Route>
+    <Router history={history} routes={routes} store={store}>
     </Router>,
     document.getElementById('app')
 );
