@@ -7,7 +7,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 
 const app = express();
 
-let compiler = webpack(webpackConfig);
+const compiler = webpack(webpackConfig);
 app.use(webpackDevMiddleware(compiler, {
     noInfo: true, publicPath: webpackConfig.output.publicPath
 }));
@@ -19,8 +19,8 @@ app.get('/', function response(req, res) {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
-let server = app.listen(process.env.PORT || 3000, () => {
-    var host = server.address().address,
+const server = app.listen(process.env.PORT || 3000, () => {
+    let host = server.address().address,
     	port = server.address().port;
 
     console.log(`Server listening at http://${host}:${port}`);

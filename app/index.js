@@ -1,15 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
-import { useRouterHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import makeRoutes from 'routes';
 import configureStore from 'store';
-
-// Configure history for react-router
-const browserHistory = useRouterHistory(createBrowserHistory) ({
-    basename: __BASENAME__
-});
 
 // Create redux store and sync with react-router
 const initialState = window.__INITIAL_STATE__;

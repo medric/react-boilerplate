@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import Item from './Item.react';
+import Item from './Item.js';
 
 class ItemsList extends Component {
 	get data() {

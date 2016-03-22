@@ -11,7 +11,7 @@ export default function configureStore(initialState) {
     const logger = createLogger({
         collapsed: true,
         predicate: () =>
-        process.env.NODE_ENV === 'development',
+            process.env.NODE_ENV === 'development',
     });
 
     const middleware = applyMiddleware(thunk, logger);
