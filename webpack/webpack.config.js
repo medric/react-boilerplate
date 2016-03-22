@@ -5,7 +5,7 @@ var autoprefixer = require('autoprefixer');
 var precss = require('precss');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 // http://stackoverflow.com/questions/33502987/webpack-bundle-js-not-found
-// expose
+// Expose
 module.exports = {
     entry: [
         'webpack-hot-middleware/client',
@@ -19,8 +19,9 @@ module.exports = {
     },
     resolve: {
         root: [
-            path.resolve('./app')
-        ]
+            path.resolve('./app'),
+        ],
+        extensions: ['', '.js']
     },
     devtool: 'sourcemap',
     debug: true,
