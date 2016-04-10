@@ -11,12 +11,15 @@ export default function configureStore(initialState) {
     const logger = createLogger({
         collapsed: true,
         predicate: () =>
-            process.env.NODE_ENV === 'development',
+            process.env.NODE_ENV === 'development'
     });
 
     const middleware = applyMiddleware(thunk, logger);
 
-    const store = middleware(createStore)(rootReducer, initialState);
+    const store = middleware(createStore)(
+        rootReducer,
+        initialState
+    );
 
     if(module.hot) {
         // Enable Webpack hot module replacement for reducers

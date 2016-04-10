@@ -1,13 +1,13 @@
 export function addItem(fields) {
   return {
     type: 'ADD_ITEM',
-    fields,
+    fields
   };
 }
 
 export function delItem(index) {
   return {
-    type: 'DELETE_ITEM',
-    index,
+    type: 'REMOVE_ITEM',
+    index
   };
 }

@@ -6,7 +6,7 @@ import items from './items'
 // import other reducers here
 
 const itemApp = combineReducers({
-	items,
-})
+	items
+});
 
 export default itemApp

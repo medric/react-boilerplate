@@ -3,7 +3,6 @@ import Item from './Item.js';
 
 class ItemsList extends Component {
 	get data() {
-
 	}
 
 	constructor(props) {
@@ -21,6 +20,14 @@ class ItemsList extends Component {
     render() {
         return (
             <div>
+                {
+                    this.props.items.map(item =>
+                        <Item key={item.id}
+                            {...item}
+                            onClick={() => this.props.onItemClick(item.id)}
+                        />
+                    )
+                }
             </div>
         );
     }
@@ -30,10 +37,11 @@ class ItemsList extends Component {
 ItemsList.propTypes = {
 	items: PropTypes.arrayOf(PropTypes.shape({
 		id: PropTypes.number.isRequired,
-		content: PropTypes.object.isRequired,
+        label: PropTypes.string.isRequired,
+		content: PropTypes.object.isRequired
 	}).isRequired).isRequired,
 	onItemClick: PropTypes.func.isRequired
-}
+};
 
 ItemsList.defaultProps = {
 };
