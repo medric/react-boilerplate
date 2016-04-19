@@ -1,23 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import makeRoutes from 'routes';
 import configureStore from 'store';
 
-// Create redux store and sync with react-router
-const initialState = window.__INITIAL_STATE__;
+// Create Redux store and sync with react-router
+const initialState = {};
 const store = configureStore(initialState, browserHistory);
-const history = syncHistoryWithStore(browserHistory, store, {
-   selectLocationState: (state) => state.router
-});
+const history = syncHistoryWithStore(browserHistory, store);
 
 // Create routes
-const routes = makeRoutes(store);
+const routes = makeRoutes();
 
 // Render application to the DOM
 ReactDOM.render(
-    <Router history={history} routes={routes} store={store}>
-    </Router>,
-    document.getElementById('app')
+  <Provider store={store}>
+    <Router history={history} routes={routes}>
+    </Router>
+  </Provider>,
+  document.getElementById('app')
 );

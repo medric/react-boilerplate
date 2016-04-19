@@ -13,13 +13,13 @@ class Item extends Component {
 
 	}
 
-    render() {
-        return (
-            <div onClick = { this.props.onClick }>
-                { content }
-            </div>
-        );
-    }
+  render() {
+      return (
+          <div onClick = { this.props.onClick }>
+              { this.props.content }
+          </div>
+      );
+  }
 
 }
 

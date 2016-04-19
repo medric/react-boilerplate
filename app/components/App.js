@@ -1,15 +1,18 @@
-import React, { PropTypes } from 'react';
-import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import React, { PropTypes, Component } from 'react';
+import {} from './partials';
 
-export default class App extends React.Component {
+console.log(Item);
+export default class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {};
+  }
 
-    render () {
-        return (
-            <Provider store={ this.props.store }>
-                <div style={{ height: '100%'}}>
-                </div>
-            </Provider>
-        )
-    }
+  render () {
+    return (
+      <div style={{ height: '100%' }}>
+        <ItemsList />
+      </div>
+    )
+  }
 }

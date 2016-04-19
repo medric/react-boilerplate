@@ -1,12 +1,14 @@
 /**
  * Reducers entry point
  */
-import { combineReducers } from 'redux'
-import items from './items'
+import { combineReducers } from 'redux';
+import items from './items';
 // import other reducers here
+import { routerReducer } from 'react-router-redux';
 
-const itemApp = combineReducers({
-	items
+const itemsApp = combineReducers({
+	items,
+  routing: routerReducer
 });
 
-export default itemApp
+export default itemsApp

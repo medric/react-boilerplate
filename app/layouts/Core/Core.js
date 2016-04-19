@@ -12,6 +12,6 @@ function Core({ children }) {
 
 Core.propTypes = {
     children: PropTypes.element
-}
+};
 
 export default Core

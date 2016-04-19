@@ -5,6 +5,10 @@ class ItemsList extends Component {
 	get data() {
 	}
 
+  getInitialState() {
+    return {items: [], visibilityFilter: ''};
+  }
+
 	constructor(props) {
 		super(props);
 	}
@@ -17,20 +21,19 @@ class ItemsList extends Component {
 
 	}
 
-    render() {
-        return (
-            <div>
-                {
-                    this.props.items.map(item =>
-                        <Item key={item.id}
-                            {...item}
-                            onClick={() => this.props.onItemClick(item.id)}
-                        />
-                    )
-                }
-            </div>
-        );
-    }
+  render() {
+      return (
+          <div>
+              {
+                  this.props.items.map(item =>
+                      <Item key={item.id}
+                          onClick={() => this.props.onItemClick(item.id)}
+                      />
+                  )
+              }
+          </div>
+      );
+  }
 
 }
 

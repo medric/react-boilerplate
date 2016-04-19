@@ -7,19 +7,25 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import rootReducer from 'reducers';
 
-export default function configureStore(initialState) {
+export default function configureStore(initialState = {}, history) {
     const logger = createLogger({
         collapsed: true,
         predicate: () =>
             process.env.NODE_ENV === 'development'
     });
 
-    const middleware = applyMiddleware(thunk, logger);
+    const enhancer = compose(
+      // Middleware
+      applyMiddleware(
+        thunk,
+        logger
+      ),
 
-    const store = middleware(createStore)(
-        rootReducer,
-        initialState
+      // Required! Enable Redux DevTools with the monitors you chose
+      window.devToolsExtension ? window.devToolsExtension() : f => f
     );
+
+    const store = createStore(rootReducer, initialState, enhancer);
 
     if(module.hot) {
         // Enable Webpack hot module replacement for reducers
