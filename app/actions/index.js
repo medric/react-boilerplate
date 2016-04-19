@@ -1,5 +1,9 @@
-import { fetchPosts } from './data';
+import { REQUEST_POSTS, RECEIVE_POSTS, fetchPosts } from './data';
+import { togglePost } from './common';
 
 export {
-  fetchPosts
+  REQUEST_POSTS,
+  RECEIVE_POSTS,
+  fetchPosts,
+  togglePost
 }

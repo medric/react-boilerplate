@@ -1,5 +1,5 @@
-import VisibleItemsList from './VisiblePostsList';
+import VisiblePostsList from './VisiblePostsList';
 
 export {
-  VisibleItemsList
+  VisiblePostsList
 }

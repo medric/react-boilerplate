@@ -6,8 +6,9 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import makeRoutes from 'routes';
 import configureStore from 'store';
 
+const initialState = window.__initialState__;
+
 // Create Redux store and sync with react-router
-const initialState = {};
 const store = configureStore(initialState, browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);
 

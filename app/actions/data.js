@@ -1,19 +1,22 @@
 import fetch from 'isomorphic-fetch'
 
-export const REQUEST_POSTS = 'REQUEST_POST';
+export const REQUEST_POSTS = 'REQUEST_POSTS';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 
 function requestPosts() {
   return {
-    type: REQUEST_POSTS
+    type: REQUEST_POSTS,
+    entries: [],
+    fetched: false
   }
 }
 
 function receivePosts(posts) {
   return {
     type: RECEIVE_POSTS,
-    posts: posts,
-    receivedAt: Date.now()
+    entries: posts,
+    receivedAt: Date.now(),
+    fetched: true
   }
 }
 
@@ -31,7 +34,7 @@ export function fetchPosts() {
         return response.json();
       })
       .then(function(posts) {
-        // Updates the app state with the results of the API call.
+        // Update the app state with the results of the API call
         dispatch(receivePosts(posts));
       })
       .catch(err =>

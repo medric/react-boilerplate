@@ -1,6 +1,6 @@
-import { connect } from 'react-redux'
-import { togglePost } from '../actions'
-import { PostsList } from '../components/partials'
+import { connect } from 'react-redux';
+import { togglePost } from '../actions';
+import { PostsList } from '../components/partials';
 
 const getVisiblePosts = (posts, filter) => {
   switch (filter) {
@@ -13,8 +13,7 @@ const getVisiblePosts = (posts, filter) => {
 
 const mapStateToProps = (state) => {
   return {
-    posts: getVisiblePosts(state.posts, state.visibilityFilter),
-    visibilityFilter: 'SHOW_ALL'
+    posts: state.posts.entries
   }
 };
 

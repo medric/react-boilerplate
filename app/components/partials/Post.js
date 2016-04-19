@@ -13,8 +13,9 @@ class Post extends Component {
 
 	render() {
 		return (
-			<div onClick = { this.props.onClick }>
-				{ this.props.data }
+			<div onClick = {this.props.onClick}>
+				{this.props.title}
+				{this.props.body}
 			</div>
 		);
 	}
@@ -23,7 +24,8 @@ class Post extends Component {
 
 Post.propTypes = {
 	onClick: PropTypes.func.isRequired,
-	data: PropTypes.object.isRequired
+	title: PropTypes.string.isRequired,
+	body: PropTypes.string.isRequired
 };
 
 Post.defaultProps = {

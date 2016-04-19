@@ -13,13 +13,15 @@ class PostsList extends Component {
 	}
 
   render() {
+      console.log(this.props);
       return (
           <div>
               {
                   this.props.posts.map(post =>
-                      <Post key={post.id}
-                          onClick={() => this.props.onPostClick(post.id)}
-                      />
+                    <Post key={post.id}
+                          {...post}
+                          onClick={this.props.onPostClick}
+                    />
                   )
               }
           </div>
@@ -30,11 +32,10 @@ class PostsList extends Component {
 
 PostsList.propTypes = {
 	posts: PropTypes.array,
-  visibilityFilter: PropTypes.oneOf(['SHOW_ALL', 'SHOW_ACTIVE']),
-	onPostClick: PropTypes.func.isRequired
 };
 
 PostsList.defaultProps = {
+  posts: [],
   visibilityFilter: 'SHOW_ALL'
 };
 
