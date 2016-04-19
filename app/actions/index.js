@@ -2,7 +2,7 @@
  * action types
  */
 
-export const UPDATE_TODO = 'ADD_TODO';
+export const ADD_TODO = 'ADD_TODO';
 export const UPDATE_ITEM = 'UPDATE_TODO';
 export const REMOVE_ITEM = 'UPDATE_TODO';
 export const TOGGLE_ITEM = 'TOGGLE_ITEM';

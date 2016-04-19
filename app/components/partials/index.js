@@ -1,4 +1,2 @@
-import Item from './Item';
-import ItemsList from './ItemsList';
-
-export default { Item, ItemsList }
+export Item from './Item';
+export ItemsList from './ItemsList';
