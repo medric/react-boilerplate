@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
-import {} from './partials';
+import { VisiblePostsList } from '../containers';
 
-console.log(Item);
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +9,7 @@ export default class App extends Component {
   render () {
     return (
       <div style={{ height: '100%' }}>
-        <ItemsList />
+        <VisiblePostsList />
       </div>
     )
   }

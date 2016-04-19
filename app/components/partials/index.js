@@ -1,2 +1,7 @@
-export Item from './Item';
-export ItemsList from './ItemsList';
+import Post from './Post';
+import PostsList from './PostsList';
+
+export {
+  Post,
+  PostsList
+}
