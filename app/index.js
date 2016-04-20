@@ -6,6 +6,9 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import makeRoutes from 'routes';
 import configureStore from 'store';
 
+// Load main from stylesheets so style is available for the components
+require('./stylesheets/sass/main.scss');
+
 const initialState = window.__initialState__;
 
 // Create Redux store and sync with react-router

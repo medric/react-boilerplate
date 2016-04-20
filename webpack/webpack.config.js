@@ -2,8 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 var AppCachePlugin = require('appcache-webpack-plugin');
 var autoprefixer = require('autoprefixer');
-var precss = require('precss');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 // http://stackoverflow.com/questions/33502987/webpack-bundle-js-not-found
 // Expose
 module.exports = {
@@ -15,11 +15,11 @@ module.exports = {
         path: path.resolve(__dirname, '../dist/'),
         publicPath: '',
         filename: 'bundle.js',
-        sourceMapFilename: "[file].map",
+        sourceMapFilename: "[file].map"
     },
     resolve: {
         root: [
-            path.resolve('./app'),
+            path.resolve('./app')
         ],
         extensions: ['', '.js']
     },
@@ -41,8 +41,8 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.css$/,
-                loader: "style-loader!styles-loader!postcss-loader"
+              test: /\.scss$/,
+              loaders: ['style', 'css', 'sass']
             },
             {
                 test: /\.js$/, // Transform all .js files required somewhere within an entry point
@@ -53,7 +53,4 @@ module.exports = {
             }
         ]
     },
-    postcss: function () {
-        return [autoprefixer, precss];
-    }
 }
