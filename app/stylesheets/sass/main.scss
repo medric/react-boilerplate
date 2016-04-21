@@ -4,5 +4,45 @@
 @import "components/all";
 
 .page__container {
-  display: flex;
+  @include establish-baseline($base-font-size);
+  font-family: sans-serif;
+
+  h1, h2, h3 {
+    text-transform: capitalize;
+  }
+
+  h1 {
+    @include font-size(20px);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    @include font-size(18px);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    @include button(#4DB6AC);
+    color: #FFF;
+    font-weight: 600;
+  }
+
+  .row {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+  }
+
+  .col {
+    @include display-flex;
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+  }
 }

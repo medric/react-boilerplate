@@ -7,5 +7,6 @@ import App from 'components/App';
 export default function() {
     return <Route path='/' component={Core}>
               <IndexRoute component={App} />
+              <Route path="/post/:id" component={PostDetails}/>
             </Route>
 }

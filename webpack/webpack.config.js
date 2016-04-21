@@ -42,7 +42,7 @@ module.exports = {
         loaders: [
             {
               test: /\.scss$/,
-              loaders: ['style', 'css', 'sass']
+              loader: 'style!css!sass?includePaths[]=' + path.resolve(__dirname, '../node_modules/compass-mixins/lib')
             },
             {
                 test: /\.js$/, // Transform all .js files required somewhere within an entry point

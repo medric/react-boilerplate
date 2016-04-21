@@ -14,7 +14,11 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1>Posts</h1>
+        <div className="page__container-header row">
+          <section class="nav-area">
+            <span id="nav-area--title">Posts</span>
+          </section>
+        </div>
       </header>
     );
   }

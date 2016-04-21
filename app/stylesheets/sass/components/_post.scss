@@ -1,0 +1,12 @@
+.page__container-content--post {
+  @include flex(1 1 20%);
+  margin: 2.5rem;
+  background: $card-color;
+  padding: 10px;
+
+  .page__container-content--post__footer {
+    button {
+      @include flex-grow(.15);
+    }
+  }
+}

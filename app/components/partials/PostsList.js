@@ -13,9 +13,8 @@ class PostsList extends Component {
 	}
 
   render() {
-      console.log(this.props);
       return (
-          <div>
+          <div className="page__container-content row">
               {
                   this.props.posts.map(post =>
                     <Post key={post.id}
@@ -31,7 +30,7 @@ class PostsList extends Component {
 }
 
 PostsList.propTypes = {
-	posts: PropTypes.array,
+	posts: PropTypes.array
 };
 
 PostsList.defaultProps = {

@@ -13,10 +13,17 @@ class Post extends Component {
 
 	render() {
 		return (
-			<div onClick = {this.props.onClick}>
-				{this.props.title}
-				{this.props.body}
-			</div>
+			<div className="page__container-content--post" onClick = {this.props.onClick}>
+				<section className="page__container-content--post__header">
+          <h2>{this.props.title}</h2>
+        </section>
+        <section className="page__container-content--post__content">
+          {this.props.body}
+			  </section>
+        <section className="page__container-content--post__footer row">
+          <button>More</button>
+        </section>
+      </div>
 		);
 	}
 
