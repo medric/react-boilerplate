@@ -30,10 +30,18 @@
 
   button {
     @include button(#4DB6AC);
-    color: #FFF;
-    font-weight: 600;
-  }
 
+    a {
+      text-decoration: none;
+      color: #FFF;
+      font-weight: 600;
+    }
+  }
+  
+  section {
+    position: relative;
+  }
+  
   .row {
     @include display-flex;
     @include flex-direction(row);

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
 function Core({ children }) {
+    console.log(children);
     return (
         <div className="page__container">
             <div className="page__container-view">

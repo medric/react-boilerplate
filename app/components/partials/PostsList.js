@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import Post from './Post.js';
+import Post from './Post';
 
 class PostsList extends Component {
 	constructor(props) {

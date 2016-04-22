@@ -1,4 +1,6 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes, Component } from 'react';
+
+var Link = require('react-router').Link;
 
 class Post extends Component {
 	constructor(props) {
@@ -21,7 +23,8 @@ class Post extends Component {
           {this.props.body}
 			  </section>
         <section className="page__container-content--post__footer row">
-          <button>More</button>
+          <div></div>
+          <button><Link to={`/post/${this.props.id}`}>More</Link></button>
         </section>
       </div>
 		);
