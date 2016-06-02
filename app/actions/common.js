@@ -1,3 +1,5 @@
+import { push } from 'react-router-redux';
+
 /*
  * action types
  */
@@ -32,9 +34,9 @@ export function removePost(index) {
 }
 
 export function togglePost(index) {
-  return {
-    type: TOGGLE_POST,
-    index
+  return function (dispatch) {
+    var to = `post/${index}`;
+    dispatch(push(to));
   }
 }
 

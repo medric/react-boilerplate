@@ -3,6 +3,7 @@ import Header from './Header';
 
 class PostDetails extends Component {
 	constructor(props) {
+    console.log(props);
 		super(props);
 	}
 
@@ -14,13 +15,14 @@ class PostDetails extends Component {
 
 	render() {
 		return (
-      <div>Foo</div>
+      <div></div>
 		);
 	}
 
 }
 
 PostDetails.propTypes = {
+  isActive: PropTypes.bool.isRequired
 };
 
 PostDetails.defaultProps = {

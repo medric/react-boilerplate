@@ -2,11 +2,12 @@
  * Store configuration takes place here
  */
 // https://github.com/anorudes/redux-easy-boilerplate/blob/master/src/store/configureStore.js
-import { applyMiddleware, compose, createStore } from 'redux';
+import { applyMiddleware, compose, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
-import rootReducer from 'reducers';
+import reducers from '../reducers';
 import { fetchPosts } from '../actions';
+import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 
 export default function configureStore(initialState = {}, history) {
   const logger = createLogger({
@@ -15,22 +16,27 @@ export default function configureStore(initialState = {}, history) {
     process.env.NODE_ENV === 'development'
   });
 
+  let routerEnhancer = routerMiddleware(history);
   const enhancer = compose(
     // Middleware
     applyMiddleware(
       thunk,
-      logger
+      logger,
+      routerEnhancer
     ),
 
-    // Required! Enable Redux DevTools with the monitors you chose
+    // Required! Enable Redux DevTools with the chosen monitors
     window.devToolsExtension ? window.devToolsExtension() : f => f
   );
 
-  const store = createStore(rootReducer, initialState, enhancer);
+  const store = createStore(reducers, enhancer);
+
+  // Create an enhanced history that syncs navigation events with the store
+  syncHistoryWithStore(history, store);
 
   // Load posts for the first time
   store.dispatch(fetchPosts()).then(() =>
-    console.log(store.getState())
+    console.log('store index', store.getState())
   );
 
   if(module.hot) {

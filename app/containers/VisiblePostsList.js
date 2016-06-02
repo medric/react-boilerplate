@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onPostClick: (id) => {
-      dispatch(togglePost(id))
+      dispatch(togglePost(id));
     }
   }
 };

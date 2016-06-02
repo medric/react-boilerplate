@@ -1,6 +1,6 @@
 .page__container-content--post {
   @include flex(1 1 20%);
-  margin: 4.5rem;
+  margin: 3rem;
   background: $card-color;
   padding: 10px;
   justify-content: flex-end;
@@ -8,7 +8,7 @@
   .page__container-content--post__footer {
     align-items: flex-end;
     justify-content: flex-end;
-    
+
     button {
 
     }

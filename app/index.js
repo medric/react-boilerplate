@@ -15,6 +15,8 @@ const initialState = window.__initialState__;
 const store = configureStore(initialState, browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);
 
+console.log(store.getState());
+
 // Create routes
 const routes = makeRoutes();
 

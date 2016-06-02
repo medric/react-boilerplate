@@ -15,7 +15,7 @@ class Post extends Component {
 
 	render() {
 		return (
-			<div className="page__container-content--post" onClick = {this.props.onClick}>
+			<div className="page__container-content--post" onClick={this.props.onClick}>
 				<section className="page__container-content--post__header">
           <h2>{this.props.title}</h2>
         </section>
@@ -23,8 +23,6 @@ class Post extends Component {
           {this.props.body}
 			  </section>
         <section className="page__container-content--post__footer row">
-          <div></div>
-          <button><Link to={`/post/${this.props.id}`}>More</Link></button>
         </section>
       </div>
 		);

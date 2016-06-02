@@ -15,7 +15,7 @@ class Header extends Component {
     return (
       <header>
         <div className="page__container-header row">
-          <section class="nav-area">
+          <section className="nav-area">
             <span id="nav-area--title">Posts</span>
           </section>
         </div>
