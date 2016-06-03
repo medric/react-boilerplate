@@ -30,7 +30,7 @@ class PostsList extends Component {
                   this.props.posts.map(post => {
                     return <Post key={post.id}
                       {...post}
-                      onClick={() => this.props.onPostClick(post.id)}
+                      onClick={() => this.props.onPostClick(post)}
                     />
                   }, this)
               }

@@ -7,7 +7,6 @@ const posts = (state, action) => {
       case REQUEST_POSTS:
         return newState;
       case RECEIVE_POSTS:
-        console.log('r', newState);
         return newState;
       default:
         return newState;
