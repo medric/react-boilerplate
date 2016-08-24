@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import { Header } from './partials';
+import { Header, Map } from './partials';
 import { VisiblePostsList } from '../containers';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div style={{ height: '100%' }}>
         <Header />
-        <VisiblePostsList />
+        <Map />
       </div>
     )
   }

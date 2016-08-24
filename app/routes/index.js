@@ -7,7 +7,7 @@ import VisiblePostsList from 'containers/'
 import { PostsList, PostDetails } from 'components/partials/';
 
 export default function() {
-    return <Route path='/' component={Core}>
+    return <Route path="/" component={Core}>
               <Route path="/posts" component={App}>
               </Route>
               <Route path="/post/:id" component={PostDetails}/>

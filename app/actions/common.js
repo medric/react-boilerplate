@@ -48,6 +48,3 @@ export function togglePost(post) {
     dispatch(showPost(post));
   }
 }
-
-export function 
-

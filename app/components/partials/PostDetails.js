@@ -3,7 +3,7 @@ import Header from './Header';
 
 class PostDetails extends Component {
 	constructor(props) {
-    console.log(props);
+    	console.log(props);
 		super(props);
 	}
 
@@ -15,7 +15,8 @@ class PostDetails extends Component {
 
 	render() {
 		return (
-      <div></div>
+      		<div>
+			</div>
 		);
 	}
 

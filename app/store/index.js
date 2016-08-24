@@ -35,9 +35,7 @@ export default function configureStore(initialState = {}, history) {
   syncHistoryWithStore(history, store);
 
   // Load posts for the first time
-  store.dispatch(fetchPosts()).then(() =>
-    console.log('store index', store.getState())
-  );
+  store.dispatch(fetchPosts());
 
   if(module.hot) {
     // Enable Webpack hot module replacement for reducers
