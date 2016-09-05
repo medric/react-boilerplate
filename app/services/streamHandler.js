@@ -1,10 +1,10 @@
 import fetch from 'isomorphic-fetch';
 // http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/
 function request() {
-    let url = 'http://thibaultfloquet.fr/api-toilets/1-dot-1/api.php/toilets/filters';
+    let url = '';
     let payload = {
-        'user' : 'citytoilets',
-        'password' : 'yYpf8qvdFdMbUn2s',
+        'user' : '',
+        'password' : '',
         'lat' : '45.75',
         'lng' : '4.85',
         'distance' : '1000'
